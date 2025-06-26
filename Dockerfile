@@ -1,5 +1,5 @@
 # Example Dockerfile for a Node.js application
-FROM node:16-alpine
+FROM public.ecr.aws/docker/library/node:16-alpine
 
 # Set working directory
 WORKDIR /app
