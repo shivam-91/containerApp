@@ -10,7 +10,6 @@ phases:
       - TIMESTAMP=$(date +%Y%m%d%H%M%S)
       - BUILD_ID=$(echo $CODEBUILD_BUILD_ID | cut -d':' -f2)
       - IMAGE_TAG=${COMMIT_HASH}-${TIMESTAMP}-${BUILD_ID}
-      - echo "Using unique tag: $IMAGE_TAG"
   build:
     commands:
       - echo Build started on `date`
