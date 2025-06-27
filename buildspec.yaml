@@ -1,5 +1,4 @@
 version: 0.2
-
 phases:
   pre_build:
     commands:
@@ -30,8 +29,13 @@ phases:
       - cat taskdef.json      
       - echo Writing image definitions file...
       - printf '[{"name":"myContainer1","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
+      - echo Writing imageDetail.json file for ECS Blue/Green deployment...
+      - printf '{"ImageURI":"%s"}' $REPOSITORY_URI:$IMAGE_TAG > imageDetail.json
+      - echo "Generated imageDetail.json:"
+      - cat imageDetail.json
 artifacts:
   files:
     - imagedefinitions.json
+    - imageDetail.json
     - appspec.yaml
     - taskdef.json
