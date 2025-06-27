@@ -6,4 +6,3 @@ Resources:
         LoadBalancerInfo:
           ContainerName: "my-app-container"
           ContainerPort: 80
-Hooks: []
