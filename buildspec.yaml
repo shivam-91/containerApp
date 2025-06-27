@@ -21,6 +21,13 @@ phases:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
       - docker push $REPOSITORY_URI:$IMAGE_TAG
+      - echo Installing envsubst...
+      - yum install -y gettext
+      - echo Generating task definition from template...
+      - echo "Substituting variables in taskdef-template.json"
+      - envsubst < taskdef-template.json > taskdef.json
+      - echo "Generated task definition:"
+      - cat taskdef.json      
       - echo Writing image definitions file...
       - printf '[{"name":"my-app-container","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
 artifacts:
