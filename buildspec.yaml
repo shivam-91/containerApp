@@ -29,7 +29,7 @@ phases:
       - echo "Generated task definition:"
       - cat taskdef.json      
       - echo Writing image definitions file...
-      - printf '[{"name":"my-app-container","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
+      - printf '[{"name":"myContainer1","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
 artifacts:
   files:
     - imagedefinitions.json
