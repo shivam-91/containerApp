@@ -1,5 +1,5 @@
 {
-  "family": "my-app-family",
+  "family": "my-task-def1",
   "networkMode": "awsvpc",
   "requiresCompatibilities": ["FARGATE"],
   "cpu": "256",
