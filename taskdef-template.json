@@ -8,7 +8,7 @@
   "taskRoleArn": "arn:aws:iam::${AWS_ACCOUNT_ID}:role/ecsTaskRole",
   "containerDefinitions": [
     {
-      "name": "my-app-container",
+      "name": "myContainer1",
       "image": "<IMAGE1_NAME>",
       "portMappings": [
         {
